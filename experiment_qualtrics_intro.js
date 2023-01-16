@@ -602,7 +602,7 @@ var end_block = {
 		trial_id: 'end',
 		exp_id: 'columbia_card_task_hot'
 	},
-	text: '<div class = centerbox><p class = center-block-text>Finished with this task.</p><p class = center-block-text>Press <strong>enter</strong> to continue.</p></div>',
+	text: '<div class = centerbox><p class = center-block-text>Finished with practice.</p><p class = center-block-text>Press <strong>enter</strong> to continue.</p></div>',
 	cont_key: [13],
 	timing_post_trial: 0,
   	on_finish: assessPerformance
@@ -738,7 +738,7 @@ var columbia_card_task_hot_experiment = [];
 columbia_card_task_hot_experiment.push(practice_block1);
 columbia_card_task_hot_experiment.push(practice_block2);
 
-columbia_card_task_hot_experiment.push(start_test_block);
+//columbia_card_task_hot_experiment.push(start_test_block);
 //for (i = 0; i < numRounds; i++) {
 	//columbia_card_task_hot_experiment.push(test_node);
 //}
