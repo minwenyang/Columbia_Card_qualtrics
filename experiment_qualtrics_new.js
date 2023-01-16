@@ -427,7 +427,7 @@ var numLossCards = ""
 var gainAmt = ""
 var lossAmt = ""
 var CCT_timeouts = []
-var numWinRounds =  4
+var numWinRounds =  24
 var numLossRounds = 4
 var numRounds = numWinRounds + numLossRounds
 var lossRounds = jsPsych.randomization.shuffle([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27,28]).slice(0,numLossRounds)
@@ -734,11 +734,11 @@ var payoutTrial = {
 
 var columbia_card_task_hot_experiment = [];
 
-columbia_card_task_hot_experiment.push(instruction_node);
-columbia_card_task_hot_experiment.push(practice_block1);
-columbia_card_task_hot_experiment.push(practice_block2);
+//columbia_card_task_hot_experiment.push(instruction_node);
+//columbia_card_task_hot_experiment.push(practice_block1);
+//columbia_card_task_hot_experiment.push(practice_block2);
 
-columbia_card_task_hot_experiment.push(start_test_block);
+//columbia_card_task_hot_experiment.push(start_test_block);
 for (i = 0; i < numRounds; i++) {
 	columbia_card_task_hot_experiment.push(test_node);
 }
