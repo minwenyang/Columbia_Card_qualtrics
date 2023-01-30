@@ -9,6 +9,11 @@ var getInstructFeedback = function() {
 		'</p></div>'
 }
 
+var getInstructFeedback2 = function() {
+	return '<div class = centerbox><p class = center-block-text>' + continue_instruct_text +
+		'</p></div>'
+}
+
 function assessPerformance() {
 	var experiment_data = jsPsych.data.getTrialsOfType('single-stim-button')
 	var missed_count = 0
@@ -75,8 +80,7 @@ var getBoard = function(board_type) {
 
 
 var getText = function() {
-	return '<div class = centerbox><p class = block-text>Overall, you earned ' + totalPoints + ' points. These are the points used for your bonus from three randomly picked trials:  ' +
-		'<ul list-text><li>' + prize1 + '</li><li>' + prize2 + '</li><li>' + prize3 + '</li></ul>' +
+	return '<div class = centerbox><p class = block-text>Overall, you earned ' + totalPoints + ' points. ' +
 		'</p><p class = block-text>Press <strong>enter</strong> to continue.</p></div>'
 }
 
@@ -593,7 +597,18 @@ var instruction_node = {
 }
 
 
-
+var continue_instruct_text =
+	"Press <strong>enter</strong> to play 5 rounds of formal game."
+var continue_instruct_block = {
+	type: 'poldrack-text',
+	cont_key: [13],
+	data: {
+		trial_id: 'instruction_continue'
+	},
+	text: getInstructFeedback2,
+	timing_post_trial: 0,
+	timing_response: 180000
+};
 
 
 var end_block = {
@@ -737,7 +752,7 @@ var columbia_card_task_hot_experiment = [];
 //columbia_card_task_hot_experiment.push(instruction_node);
 columbia_card_task_hot_experiment.push(practice_block1);
 columbia_card_task_hot_experiment.push(practice_block2);
-
+columbia_card_task_hot_experiment.push(continue_instruct_block);
 //columbia_card_task_hot_experiment.push(start_test_block);
 for (i = 0; i < numRounds; i++) {
 	columbia_card_task_hot_experiment.push(test_node);
